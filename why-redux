@@ -1,0 +1,38 @@
+During larger React applications, state becomes more spread out in different components
+
+Redux encourages storing all necessary data in application as plain JavaScript object called state
+*application state holding all data simply as JavaScript object, no method on object and memory
+efficient*
+state = {
+  user: {
+    name: 'malind',
+    town: 'durango'
+  },
+  interests: [
+    {
+      name: 'running',
+      type: 'sport'
+    },
+    {
+      name: 'kickboxing',
+      type: 'sport'
+    }
+  ]
+}
+
+
+HOW TO HOLD UP STATE
+The data is held in one place and upon updating, an action is sent with strict instructions Redux
+uses for how to update
+*anytime a state is updated in Redux, action must first be created in plain old JavaScript object*
+action = {
+  type: 'ADD_INTEREST',
+  newInterest: {
+    name: 'programming',
+    type: 'education'
+  }
+}
+
+How Redux allows update on state:
+Action -> State -> Updated State
+-Action combined with previous state leads to an updated state
