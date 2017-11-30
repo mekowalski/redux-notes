@@ -1,0 +1,59 @@
+Somehow action updates the state:
+let state = {count: 0}
+let action = {type: 'INCREASE_COUNT'}
+
+How to sent this action to state to update the state to:
+state -> {count: 1}
+
+
+FUNCTION TO THE RESCUE
+-Write a function to take in previous state, action and produce a new state
+function changeState(state, action) {
+  if (action.type === 'INCREASE_COUNT') {
+    return {count: state.count + 1}
+  }
+}
+*action.type: action always needs type property so the function knows what to do*
+
+-Customary yo use switch case statements, conditionals would become messy
+function changeState(state, action) {
+  switch(action.type) {
+    case 'INCREASE_COUNT':
+      return {count: state.count + 1}
+  }
+}
+*very explicit and clear that action.type is information switching on how to change state*
+
+-Important that state never returns null or undefined, cover this with default case in the function
+function changeState(state, action) {
+  switch (action.type) {
+    care 'INCREASE_COUNT':
+      return {count: state.count + 1}
+    default:
+      return state
+  }
+}
+changeState(state, action) => {count: 1}
+
+-Significance of Redux is to summarize, this is always the core flow of Redux:
+Action -> Function -> Updated State
+
+
+REDUCERS ARE PURE FUNCTIONS
+function reducer(state, action){
+  switch (action.type) {
+    case 'INCREASE_COUNT':
+      return {count: state.count + 1}
+    case 'DECREASE_COUNT'
+      return {count: state.count - 1}
+    default:
+      return state;
+  }
+}
+1. Pure functions are only determined by their output values
+2. Pure functions have no side effects, no effect outside of the function, they only return value
+
+-Lack of side effects means the functions are predictable, contained and can be used without
+affecting the rest of the application
+-The specific reducer function never updates the previous state but rather creates a new state
+object
