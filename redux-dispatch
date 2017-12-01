@@ -1,0 +1,43 @@
+BUILDING A COUNTER APPLICATION
+let state = {count: 0}
+let action = {type: 'INCREASE_COUNT'}
+
+function changeState(state, action) {
+  switch (action.type) {
+    care 'INCREASE_COUNT':
+      return {count: state.count + 1}
+    default:
+      return state
+  }
+}
+changeState(state, action) => {count: 1}
+^^Problem with changeState funtion, the state never increase beyond one
+
+*Need to persist the change and encapsulate the process in a function
+
+function dispatch(action) {
+  state = changeState(state, action)
+}
+dispatch({type: 'INCREASE_COUNT'}) => 1
+dispatch({type: 'INCREASE_COUNT'}) => 2
+dispatch({type: 'INCREASE_COUNT'}) => 3
+
+-Declare state to equal an object ''{count: 0}'
+-Define reducer and new function 'dispatch'
+-Call 'disptach' function that calls the 'changeState' function and passed the action object
+-It will reference the already declared state and pass that through
+-The reducer function returns a new object that has property count
+-Finally the 'dispatch' function takes the return value of '{count: 1}' and assigns it to state
+
+
+RENDERING STATE
+-To render this on a page, write a render function that changes the HTML
+function render() {
+  document.setInnerHTML = state.count
+}
+
+-Making sure that the 'render()' function runs every time the 'dispatch' function is called
+function dispatch(action) {
+  state = changeState(state, action)
+  render()
+}
