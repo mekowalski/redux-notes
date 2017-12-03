@@ -1,0 +1,44 @@
+Able to dispatch with any action type as long as it doesn't hit switch statement, dispatch action
+type of '@@INIT' by convention
+
+DISPATCH AN INITIAL ACTION TO SET UP INITIAL STATE
+-The previous initial value of state in JavaScript is:
+  'let state = {count: 0}'
+*Reducer manages the state but should also return initial state*
+
+-Begin declaring state but not assign it to anything
+'let state'
+
+function changeState(state, action) {
+  switch(action.type) {
+    case 'INCREASE_COUNT':
+      return {count: state.count + 1}
+    default:
+      return state
+  }
+}
+
+function dispatch(action) {
+  state = changeState(state, action)
+  render()
+}
+
+function render() {
+  document.innerHTML = state.count
+}
+
+dispatch({type: '@@INIT'})
+=> Uncaught TypeError: Cannot read property 'count' of undefined(…)
+*render() breaks because state is undefined, ES6 allows passing of default value to initial state
+function changeState(state = {count: 0}, action) {
+  //Remaining function code
+}
+
+dispatch({ type: '@@INIT' }) => { counter: 0 }
+dispatch({type: 'INCREASE'}) => { counter: 1 }
+
+-Initial dispatch is really calling:
+  changeState(undefined, {type: 'INIT'})
+
+-Essentially, state begins with undefined and is never defined again
+-Reducer's default argument is set up to initial state but never used again
