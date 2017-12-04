@@ -1,0 +1,60 @@
+Redux Review
+Action -> Reducer -> New State
+
+
+REBUILD DISPATCH FUNCTION AND REDUCER
+-Pass in an action and previous state to reducer, then reducer should return new state
+let state = { count: 0}
+
+function changeState(state, action) {
+  switch (action.type) {
+    case 'INCREASE_COUNT':
+      return {count: state.count + 1}
+    default:
+      return state
+  }
+}
+*state is unchanged still, need to assign state to return value of reducer each time reducer is
+called*
+
+
+--Wrap execution of reducer in a function that is called dispatch
+function dispatch(action) {
+  state = changeState(state, action)
+  render()
+}
+*this now keeps the state changed(update) and returns the 'state'*
+*currently, this state is not reflected in the HTML*
+
+
+--Use render function to display the state
+function render() {
+  let container = document.getElementById('container')
+  container.textContent = state.count
+}
+*reflects the current count*
+*render() should tie with dispatch function* (L23)
+
+
+--Initial state set in the reducer
+let state
+
+function changeState(state = {count: 0}, action) {
+  //Reducer code here
+}
+
+-Each time the page is opened, the default state should show and not increase
+-Include 'dispatch({type: '@@INIT'})' to the end of the JavaScript file
+
+
+--Integrate dispatch with user event
+-dispatch is responsible for updating state and re-rendering, action should be dispatched each
+time user clicks, attach 'dispatch' execution to click event
+
+let button = document.getElementById('button')
+button.addEventListener('click', function() {
+  dispatch({type: 'INCREASE_COUNT'})
+})
+*now dispatches an action of type increase, updates state then updates view*
+*User can call the dispatch method by executing dispatch from inside the callback of an event
+handler*
