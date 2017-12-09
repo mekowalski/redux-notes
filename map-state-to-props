@@ -1,0 +1,45 @@
+Previously integrated React application to update state but React did not re-render in response to
+changes in the state
+
+USE PROVIDER COMPONENT FROM REACT REDUX
+-React and Redux libraries don't properly communicate to each other to specify the change in the
+state that occurred
+-Run 'npm install react-redux --save' to install and add it to the 'package.json' file, this helps
+React Redux to communicate
+-RR library gives access to Provider component, it wraps the App component and does 2 things:
+  alert Redux app when there has been a change ins state
+  and re-renders the React app
+
+*add in index.js file:*
+1. Import Provider from React redux
+2. Use Provider to wrap React application
+3. Pass the store instance into Propvider as prop to make it available to all other components
+
+'import {Provider} from 'react-redux'' and
+'<Provier store={store}>(App component)</Provider,>'
+
+
+CONNECT CONTAINER COMPONENT TO STORE USING CONNECT() FUNCTION
+-Components have the ability to connect to the store but not ever component should re-render in
+response to chagne of state
+-React Redux requires specification to the store's state that should re-render the application with
+the connect() function
+-connect() allows retrieving date from internal sate, told to re-render and get new data when state
+changes
+
+*add in App.js file:*
+'import {connect} from 'react-redux''
+'const mapStateToProps = (state) => {
+  return {items: state.items}
+}
+
+export default connect(mapStateToPropsp)(App)'
+*2 goals: 1. re-render the App component when specific changes occur to state and 2. provide the
+slice of state that the App component needs*
+
+'export default connect(mapStateToProps)(App)'
+1. a function that listens to every change in store
+2. filters out the changes relevant to particular Component
+3. provide that Component
+4. lastly the entire connect() method returns a new Component, similar to App Component but also
+receives the correct data
