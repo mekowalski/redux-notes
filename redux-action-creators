@@ -1,0 +1,35 @@
+Actions are plain old JavaScript objects(POJO), but not to be ignored
+-In Redux when a button is clicked, an action is dispatched and the reducer takes information from
+that action to change the state
+
+
+STRUCTURING ACTIONS
+-An action is a POJO with a property type
+const increaseCount = {type: 'INCREASE_COUNT'} <--valid action
+
+store.dispatch(increaseCount) <--dispatch action to be handled by reducer
+
+
+ACTION CREATORS
+-Actions are simple POJO's with at least one property called 'type'
+
+1. function increaseCount() {
+    return {type: 'INCREASE_COUNT'}
+   }
+
+2. store.dispatch(increaseCount())
+-1 is defining a function to return an action and then executed to dispatch that action to store
+-2 is the equivalent of the first function above
+
+-Actions are wrapped in functions because actions will often times have parts that need change
+function addTodo(todo) {
+  return {
+    type: 'ADD_TODO',
+    todo: todo
+  }
+}
+
+addTodo('bake cake') => {type: 'ADD_TODO', todo: 'bake cake'}
+addTodo('do laundry') => {type: 'ADD_TODO', todo: 'do laundry'}
+
+-Wrapping action in a function easily organizes the action properties
