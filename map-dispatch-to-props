@@ -1,0 +1,52 @@
+Remove knowledge from store in components by using similar function of 'mapStateToProps()' with
+'mapDispatchToProps()'
+
+
+IDENTIFY THE PROBLEM
+-This line of code makes the component completely reliant on Redux
+handleOnClick() {
+  this.props.store.dispatch(addItem())
+}
+
+
+USING MAPDISPATCHTOPROPS()
+-Pass in connect() function as a second argument to mapDispatchToProps() that adds new prop to the
+function, pointing to action creators
+
+*add in App.js file:*
+const mapDispatchToProps = () => {
+  return {
+    addItem: addItem
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+*added a props 'addItem' that points to the value, which is the action creator&
+
+-Now change handleOnClick() function to execute the action creator by referencing it as a prop
+handleOnClick() {
+  this.props.addItem()
+}
+*this code calls the action creator but isn't good enough, what is really needed is to call the
+action creator and then dispatch the returned action to store*
+
+
+BINDACTIONCREATORS()
+-Access a function from Redux library called bindActionCreators() to execute dispatch function and
+pass in the return value of the action creator
+
+*add in App.js file:*
+import {bindActionCreators} from 'redux'
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addItem: addItem
+  }, dispatch)
+}
+
+1. change with adding argument to mapDispatchToProps() dunction called dispatch(L41)
+2. Have to express what to eventually dispatch by using bindActionCreators() function and passing
+it the new props and the dispatch function(L42-44)
+
+*returning the addItem() prop no longer pointing to action creator but instead to dispatch function
+and passes through the return value of the action creator as the argument
