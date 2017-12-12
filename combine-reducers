@@ -1,0 +1,69 @@
+A single reducer works well in small applications where the state of one resource is managed but is
+difficult to use when there are multiple resources
+-combineReducers() allows the delegation of different pieces of state to separate reducer functions
+
+
+DETERMINE APPLICATION STATE STRUCTURE
+EXAMPLE: storing two types of information- all the books(array) and all the authors(array)
+
+*application state*
+{
+  books: ['array', 'of', books],
+  authors: ['array', 'of', 'authors']
+}
+
+*state will have 2 top-level keys pointing to an array each*
+export function bookApp(state ={
+  authors: [],
+  books: []
+}, action) {
+  //switch statement
+  //case statements
+  //default statement
+}
+
+-Working with 2 resources increases size of reducer by almost double
+-Also placing the resources in same reducer couples the resources together and that should be
+separate
+
+
+REFACTOR BY USING COMBINEDREDUCERS()
+-combineReducers() allows separation of reducers the pass each reducer to the function to produce
+the reducer that was written
+
+const rootReducer = combineReducers({
+  authors: authorsReducer,
+  books: booksReducer
+})
+
+-Tell Redux to produce a reducer that return states with keys of books and authors equal to the
+return values of respective Reducers()
+-Each Reducer() as a return default state of an empty array therefor the application maintains the
+initial state of {books: [], authors: []}
+
+
+EXAMINING NEW REDUCERS
+function authorsReducer(state = [], action) {
+  switch(action.type) {
+    case 'ADD_AUTHOR':
+      return state.concat(action.author)
+
+    case 'REMOVE_AUTHOR':
+      const index = state.indexOf(action.id)
+      return [...state.slice(0, index), ...state.slice(index + 1)]
+
+    default:
+      return state
+  }
+}
+
+-The individual Reducer() only concerns itself with its own slice of state
+-No need to retrieve list of authors with call of 'state.authors' but access list of authors
+by calling 'state'
+
+
+DISPATCHING ACTIONS
+-combineReducers() returns one large reducer that looks like the very first set of code
+-Dispatching actions the same way as it always did
+  'store.dispatch({type: 'ADD_AUTHOR', {title: 'huck finn'} })'
+^will hit switch statement and add a new author
