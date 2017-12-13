@@ -1,0 +1,50 @@
+Client-Side routing does not make constant HTTP GET requests
+-Builds an app that allows unique pages for the user to interact with
+
+EXAMPLE: Client-Side app has these routes
+https://www.movie-maker-2016/movies/new
+https://www.movie-maker-2016/movies
+https://www.movie-maker-2016/about
+https://www.movie-maker-2016/login
+
+*servers only job is to render HTML*
+
+-Client_side routing now is responsible for handling the routing, fetching and displaying of data in the
+browser instead of the server
+-Great benefit is speed, only making one request to the server and not having to wait for a round trip
+server call for each page
+
+
+SINGLE PAGE APP (SPA)
+-SPA won't require multiple pages being loaded, only the original GET request with initial HTML, CSS &
+JS files from server
+-Take in consideration:
+  Make sure the URL displays what the user is doing at that moment
+  User should be able to use browser's back/forward buttons easily
+  Use should be able to input URL into address bar and navigate to the view they need to see
+
+
+LIMITS OF CLIENT-SIDE ROUTING
+-Loading CSS & JavaScript can now take a while on the first page
+-Analytic tools usually track pages but SPA doesn't have pages in the traditional sense therefore it's
+difficult to track page views
+-It is much more difficult to design because all the possibilities that might happen on the Client-Side
+need to be planned out and there would be repetition of designs
+
+
+PUSH IT
+-URL's information are saved in the browser history
+-window.history.back() & window.history.forward() is the JavaScript emulating the back/forward experience
+-Use pushState() to go the the history entries, it takes 3 paramaters: pushState(state, title, url)
+-state object: plain JavaScript associated with new history entry used to create with pushState() function
+-title: currently ignored by most browsers and safe to pass an empty string
+-url: this URL is for the new history entry
+
+Create new url in browser
+var newState = {
+  goal: 'Learn about pushState()'
+}
+
+window.history.pushState(newState, 'new state', 'new-state')
+
+window.history.state => {goal: 'Learn about pushState()'}
