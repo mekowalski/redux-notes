@@ -1,0 +1,58 @@
+Previously, creating nested routes help how to render a component although it doesn't yet display
+information regarding what's rendered
+
+
+DYNAMICALLY FINDING SHOW
+-Wire up a component to dynamically render information about something based on the URL
+  1. Connect component with Redux store to know about a list
+  2. Find the id that matches the ':id' param of the route
+  3. Make that match available to the component via props
+  *use movie example from previous*
+
+-First import connect() and use mapStateToProps() function to let component know about changes to store
+*src/containers/MovieShow.js file*
+import React from 'react';
+import {connect} from 'react-redux'
+
+const MovieShow = props =>
+  <div>
+    <h3>Movie Show Component!</h3>
+  </div>;
+
+const mapStateToProps = (state) => {}
+
+export default connect(mapStateToProps)(MovieShow)
+
+-Then access :movieId supplied via URL
+  1. mapStateToProps() takes in 2nd argument of props passed directly to the component
+  2. React Router supplies any dynamic pieces of URL to component via object called 'match.params' as
+  own props of related component
+
+*src/containers/MovieShow.js file*
+const mapStateToProps = (state, ownProps) => {
+  return {
+    movieId: ownProps.match.params.movieId
+  }
+}
+
+-Now iterate through list of movies and return where the route
+*src/containers/MovieShow.js file*
+const mapStateToProps = (state, ownProps) => {
+  const movie = state.movies.find(movie => movie.id == ownProps.match.params.movieId)
+
+  if (movie) {
+    return {movie}
+  }
+  else {
+    return {movie: {}}
+  }
+}
+
+-Assume a movie is found, it is added to the props
+-If a movie isn't found then an empty object is returned as the movie
+-Last to do is add title to the MovieShow render function
+*src/containers/MovieShow.js file*
+const MovieShow = ({movie}) =>
+  <div>
+    <h3>Title: {movie.title}</h3>
+  </div>
