@@ -1,0 +1,86 @@
+Routes can be used to specify multiple components to render
+-MasterDetail interface pertains to an entire resource, such as a list of emails, and more detailed
+display of a specific action on another portion of the screen
+-React_Router can make MasterDetail pattern with components as children to each other
+
+
+RENDERING LIST
+-Use mapStateToProps() function to pull a property from the state and attach it to the props of a
+component
+*src/containers.MoviesPage.js file*
+import React from 'react';
+import { connect } from 'react-redux';
+import MoviesList from '../components/MoviesList';
+
+const MoviesPage = ({ movies }) =>
+  <div>
+    <MoviesList movies={movies} />
+  </div>;
+
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies
+  };
+}
+
+export default connect(mapStateToProps)(MoviesPage);
+
+*MoviesPage component is purely presentational at the moment, need to create MoviesList component to
+render React Router Links for each movie*
+import React from 'react'
+import {Link} from 'react-router-dom'
+
+const MoviesList = ({movies}) => {
+  const renderMovies = movies.map(movie =>
+    <Link key={movie.id} to={'/movies/${movie.id}'}>{movie.title}</Link>
+  )
+
+  return (
+    <div>
+      {renderMovies}
+    </div>
+  )
+}
+
+export default MoviesList
+
+
+LINKING TO THE SHOW
+-Create a nested route to display more specific parts of a component
+-Then add nested route in the MoviesPage file to display route match '/movies/:movieId'
+*src/containers/MovieShow.js file*
+import React from 'react'
+
+const MoviesShow = props => {
+  return (
+    <div>
+      <h3>Movies Show Component!</h3>
+    </div>
+  )
+}
+
+export default MoviesShow
+
+*add in MoviesPage.js file:*
+import {Route} from 'react-router-dom'
+import MoviesShow from './MoviesShow'
+const MoviesPage = ({match, movies }) =>
+  <div>
+    <MoviesList movies={movies} />
+    <Route path={`${match.url}/:movieId`} component={MovieShow}/>
+    <Route exact path{match.url} render={() => (
+      <h3>Please select a Movie from the list.</h3>
+    )}
+  </div>
+
+-MoviesPage container now has 2 Route components
+  1. inheriting 'match' from 'this.props', POJO that contains current url, ability to display data
+  depending on what 'match.url' returns
+  2. defining path of '${match.url}/:movieId' to load MovieShow component whrn the url looks like
+  'movies/1'
+
+-Update MoviesList component to have links to get nested routes
+const MoviesList = ({movies}) => {
+  const renderMovies = movies.map(movie =>
+    <Link to={'/movies/${movie.id}'}>{movie.title}</Link>
+  )
