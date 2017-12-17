@@ -1,0 +1,46 @@
+Add a second nested route that goes to '/new' and displays the New component
+-New component dispatches the add action on submission, needs to be added into the Route
+-Add link to the List(use movies example)
+
+*add in src/containers/MoviesPage.js file*
+-import MoviesNew from './MoviesNew'
+-<route path={`${match.url}/new`}
+
+-Also need to add link to NavBar component to go to the New URL
+*add in src/components/NavBar*
+<NavLink
+  style={{marginRight: '10px'}}
+  to='/movies/new'
+>
+  Add Movie
+</NavLink>
+
+-In this position of code MoviesNew and MovieShow components are both loading
+-'movies/new' and 'movies/:movieId' can look like the same route
+-Need to use React Router's Switch component to render a route exclusively
+-Update MoviesPage component to use Switch component
+
+*add in src/containers/MoviesPage.js*
+import {Route, Switch} from 'react-router-dom'
+<Switch> {//wrap all Routes as children of Switch component
+  <Route path={`${match.url}/new`}/>
+  <Route path={`${match.url}/:movieId`} component={MovieShow}/>
+  <Route exact path={match.url} render={() => (
+    <h3>Please select a Movie from the list.</h3>
+  )}/>
+</Switch>
+
+
+REDIRECTING
+-Should redirect user back to '/movies' route after creating a New movie
+-React Router provides a nice interface to do this
+-The <Router> provides the 'history' object that has function called 'push()' taking in a URL string to
+update the page and redirect
+
+*add in src/containers/MoviesNew file in handleOnSubmit()*
+handleOnSubmit = event => {
+  event.preventDefault();
+  const {addMovie, history} = this.props
+  addMovie(this.state)
+  history.push('/movies')
+}
