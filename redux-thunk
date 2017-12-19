@@ -1,0 +1,51 @@
+Web requests in JavaScript are asynchronous
+-When a web request is made at the first line of the fetchWhatever() function, the code on the 2nd line
+will start running before the web request resolves and a response that can be worked with
+-fetch() request returns a promise, an object that represents some value that will be available later
+
+The steps that should occur when a user wants to call the API:
+  1. Invoke fetchWhatever()
+  2. After invoking, dispatch an action that data is loading
+  3. Then call fetch() method, it runs and returns a promise waiting to be resolved
+  4. When promise resolves, dispatch another action with a 'type' and 'whatever' gets sent to reducer
+
+
+MIDDLEWARE NEEDED
+-Middleware helps with the steps to be done from above
+-Install with 'npm install --save redux-thunk'
+-Initialize 'index.js' file to incorporate the middleware
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Provider} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
+import think from 'redux-thunk'
+import rootReducer from './reducers'
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById('container')
+)
+
+
+USING REDUX-THUNK MIDDLEWARE
+-Redux Thunk allows return of a function inside the action creator, a big change from just returning POJO
+-Redux Thunk also receives store's dispatch function as its argument, to dispatch multiple actions from
+returned function
+*actions/fetchCats.js file*
+export function fetchCats() {
+  return (dispatch) => {
+    dispatch({type: 'START_ADDING_CATS_REQUEST'})
+    return fetch('hhtp://www.catapi.com')
+      .then(response = response.json())
+      .then(cats => dispatch({type: 'ADD_CATS', cats}))
+  }
+}
+
+-Return a function not an action, ability to dispatch actions from inside of the returned function
+-First dispatch and action to state, about to make a request to applyMiddleware
+-Then make request, don't hit the 'then()' function until response is received
+-Not dispatch action of 'ADD_CATS' until data is received then send along that data
