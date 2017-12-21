@@ -33,3 +33,23 @@ INTERESTS (index)
 -'I enjoy hiking mountains and camping'
 -'I also love to kickbox and lift weights'
 -'Currently I am interested in becoming an aerospace engineer because of reading The Martian'
+
+
+RESTful routes
+/experience/ ---> index
+/experience/new ---> new
+/experience ---> create
+/experience/:id ---> show, update, destroy
+/experience/:id/edit ---> edit
+
+/school/ ---> index
+/school/new ---> new
+/school ---> create
+/school/:id ---> show, update, destroy
+/school/:id/edit ---> edit
+
+/projects/ ---> index
+/projects/new ---> new
+/projects ---> create
+/projects/:id ---> show, update, destroy
+/projects/:id/edit ---> edit
