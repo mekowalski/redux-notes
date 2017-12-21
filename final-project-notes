@@ -53,3 +53,20 @@ RESTful routes
 /projects ---> create
 /projects/:id ---> show, update, destroy
 /projects/:id/edit ---> edit
+
+
+**Someone mentioned login code is difficult to incorporate with React**
+**Also mentioned having 1 or 2 models tops, not trying to upstage previous project**
+**Advised keeping app very simple, small and grow it with React**
+**If I don't have login info then I may just make it MY OWN RESUME PAGE but that's a bit stagnant**
+**I could edit the sections, create new info, delete old info so this may help with state**
+**Someone suggested having a public form that users can just use to display their resume info**
+**But I think any user would be able to edit resume info that isn't theirs, that is why I want login**
+**i don't know, no idea**
+
+
+ATTRIBUTES
+Project: Employer, Position, Length, Tasks
+Education: SchoolName, DegreeEarned, Length
+Project: Title, Length, Summary
+Interests: Summary
