@@ -1,0 +1,25 @@
+BREAK UI INTO COMPONENT HIERARCHY
+-Single Responsibility Principle: component should ideally do only one thing, if it grows it should be
+broken down to smaller subcomponents
+-UI and data models tend to adhere to information architecture, work of separating UI into components is
+often trivial
+-After identifying the components in the mock, then arrange into a hierarchy
+-Easy to do when components are children of another component
+
+
+BUILD STATIC VERSION ON REACT
+-Building a static version of app that renders data model with building components that reuse other
+components and pass data using 'props'
+-Props pass data from parent to child, don't use state to build static version because it isn't needed
+-Components only have 'render()' methods since this is static
+-React has one-way data flow to keep everything modular and fast
+
+
+PROPS VS STATE
+-Both are POJO's
+-Both changes trigger render update
+-Both are deterministic
+-Props: component configurations, immutable as far as the component receiving them, component can't
+change its props but is responsible for putting them together
+-State: Begins with default value when a component mounts, serializable representation of one point in
+time
