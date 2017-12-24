@@ -23,3 +23,28 @@ PROPS VS STATE
 change its props but is responsible for putting them together
 -State: Begins with default value when a component mounts, serializable representation of one point in
 time
+
+
+IDENTIFY MINIMAL REPRESENTATION OF UI STATE
+-Trigger changes to underlying data and React makes this easy with state
+-Absolute minimal representation of state the app needs and compute everything else needed on demand
+  EXAMPLE: Build todo list, keep array of the todo items around, don't keep separate state variable
+  for the count
+  When wanting to render the todo count, take the length of the todo items array
+-Ask 3 questions about each piece of data
+  1. Is it passed from parent via props, if yes, it isn't state
+  2. Is it unchanged over time, if yes, it isn't state
+  3. Is it computable based on any other state or props in component, if yes, it isn't state
+
+
+IDENTIFY WHERE STATE SHOULD LIVE
+-Which component should mutate or own the state
+*React is one-way data flow down the component hierarchy*
+-It is difficult to understand which component should own what state
+***OFTEN MOST CHALLENGING PART FOR NEWCOMERS TO UNDERSTAND***
+-To figure it out for each piece of state in your application
+  1. Identify every component that renders based on state
+  2. Find common owner component (single comp above all the comps that need state in hierarchy)
+  3. Common owner or another comp higher up in hierarchy should own state
+  4. If a comp doesn't make sense to own state then create new state simply for holding state and add it
+  somewhere in hierarchy above common owner comp
