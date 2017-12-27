@@ -1,0 +1,48 @@
+No need to rewrite app to begin using React
+-React can be used without a build pipeline but it is recommended to set it up to be more productive
+-Modern build pipeline consists of:
+  1. package manager such as yarn or npm, takes advantage of vast ecosystem of 3rd party packages &
+  easily installs/updates them
+  2. bundler such as webpack or browserify, writes modular code and bundle it together into small
+  packages to optimize load time
+  3. compiler such as babel, writes modern JavaScript code that still works in older browsers
+
+INSTALLING REACT
+-After installing, recommended to set up a production build process to ensure the fastest version of
+React in production is in use
+-Yarn or npm for managing front-end dependencies(i only know npm)
+  Both download packages from npm registry
+  Yarn installation:
+    yarn init
+    yarn add react react-dom
+
+  npm installation:
+    npm init
+    npm install --save react react-dom
+
+
+ENABLING ES6 AND JSX
+-Recommended use of Babel with React to let ES6 and JSX in JavaScript code
+-ES6 is modern JavaScript features that make development easier
+-JSX is an extension to JavaScript language working nicely with React
+-Make sure to install and enable in '.babelrc configuration':
+  babel-preset-react & babel-preset-env
+
+
+HELLO WORLD WITH ES6 AND JSX
+-Recommended using a bundler like webpack/Browserify to write modular code and bundle together into
+small packages to optimize load time
+-Smallest React example:
+  import React from 'react'
+  import ReactDOM from 'react-dom'
+
+  ReactDOM.render(
+    <h1>Hello World!!!</h1>,
+    document.getElementById('root')
+  )
+*this renders into DOM element with id of root, somewhere in the file*
+
+
+DEVELOPMENT AND PRODUCTION VERSIONS
+-Default, React includes many helpful warnings that are useful in development
+-However, this makes React larger and slower so use production version when deploying app
