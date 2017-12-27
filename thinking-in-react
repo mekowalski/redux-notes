@@ -48,3 +48,10 @@ IDENTIFY WHERE STATE SHOULD LIVE
   3. Common owner or another comp higher up in hierarchy should own state
   4. If a comp doesn't make sense to own state then create new state simply for holding state and add it
   somewhere in hierarchy above common owner comp
+
+
+ADD INVERSE DATA FLOW
+-After an app correctly renders as a function of props and state flowing down hierarchy
+-Time to now support data flow the ather way: form comps deep in hierarchy need to update the state
+-React makes this simple but a bit more work than traditional two-way data binding
+-Make sure whenever user changes form, update the state to reflect user input
