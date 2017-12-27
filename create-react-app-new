@@ -1,0 +1,15 @@
+Create React App is best way to begin building a new React single page application
+-It sets up environment to use latest JavaScript features, provides nice developer experience and
+optimizes app for productions
+-Need Node >= 6 on your machine
+
+npm install -g create-react-app
+create-react-app my-app-name
+
+cd my-app-name
+npm start
+
+-Does not handle backend logic or databases, creates frontend build pipeline therefore backend is
+entirely on the developer
+-Uses Babel and Webpack inder the hood but no configuration
+-When ready to deploy, run 'npm run build' to create optimized build of the app in the 'build' folder
