@@ -6,7 +6,7 @@ Beer Finder or Journal/Log App
   -Brewery
   -Address
   -Beer Type (examples:ale, lager, stout, pale ale, pilsner, porter, wheat, barley wine, kolsch, dubbel,
-  amber, blonde, brown, light
+  amber, blonde, brown, light)
   -Alcohol % By Volume(ABV)
   -Pint Price
   -Is Seasonal/Regular?
@@ -19,3 +19,22 @@ Beer Finder or Journal/Log App
 -Pint Price: DECIMAL or FLOAT?
 -Is Seasonal: BOOLEAN
 -Notes: TEXT
+
+
+*How to makes this without Auth or Login?*
+*Can anyone just come to the site and en1ter beer information and update/delete it?*
+*Some beers that are already listed isn't theirs to alter*
+*Should I just make a beer site that allows displays of entered beers?*
+*This was suggested as a beer finder app, I want to POSSIBLY create a search bar that allows look up of
+certain beers by their traits of: Brewery, Type, ABV, Price*
+
+
+-Beer app needs to be able to input information
+-Can index all the beers, certain beers by attributes
+-Can display show page of a single beer
+-Ability to update any beer you entered
+-Ability to delete any beer you entered
+-Create a new beer in form
+-Read/Review the new beer
+-Update the beer that was made
+-Delete beer if needed
