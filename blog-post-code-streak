@@ -44,6 +44,34 @@ I committed code on Github for 62 days, I wanted to go for 75 days but it didn't
   meant that I was able to move forward onto the final section of the curriculum.
 
 -Began learning an immense amount of React
+  Okay React is tough. This is what I know of React.  It mainly is a JavaScript library that is
+  quite efficient, flexible and declarative for building user interfaces.  What I learned is that
+  React helps easily render views. It 'declaratively' programs what you want your code to do.
+
+  Example:
+  Process of hiring someone to paint the house
+  -Hire the person
+  -Tell them to paint the house walls this color
+  -They get it done
+  *No other explanation because the painter knows EXACTLY what to do*
+
+  React works with JSX to help clean and organize the view code.  React can be rendered on the
+  server which helps speed up a JavaScript application and show users the rendered HTML as quickly
+  as possible.  Somehow someway React will introduce you to a loving of functional programming
+  due to React working well with function, pure, immutable patterns. A few setbacks of React are:
+  -You don't get an event system, besides vanilla DOM events
+  -You don't have AJAX capabilities
+  -There are no promises
+  -There isn't any application framework
+  -You work with plugins such as Webpack and Babel that may be confusing tools to use but they are
+  worth knowing
+  -Flux and data flow are great complex patterns for beginners, state management is difficult to
+  comprehend for new React users.  Most users have now moved onto Redux from Flux and is the most
+  popular state management library
+  So why should I consider React?  There are a few reason why React is still a great library.  It
+  works well for teams that enforce UI and workflow patterns.  UI code is readable and easy to
+  maintain. Lastly component-based UI is the future of web development and is encouraged to learn
+  now.
 
 -Learned about Props and State and how to differentiate the two
 
