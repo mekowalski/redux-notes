@@ -1,12 +1,33 @@
-I committed code on Github for 62 days, I wanted to go for 75 days but it didn't happen and I was close
-Some things I learned and did during the coding streak
+I committed code on Github for 62 days, I wanted to go for 75 days but it didn't happen & I was close
+-Elaborate on these
+-Some things I learned and did during the coding streak:
 
 -Began Hacktoberfest contribution on a Github user's repository
--Made my own prject for Hacktoberfest for beginners to contribute to
+  I had not contributed to Hacktoberfest until October 2017. I recall the event and legitimately I
+  had already met the requirements of getting a Hactobkerfest t-shirt by a long shot but I wanted to
+  actually use my skills and make a contribution.  I found a few Hacktoberfest projects on the site
+  and picked one that I believed I could contribute open-source code on.  This was a great new branch
+  of coding I had done and broke up the daily learning I had done during the time.  Instead of learning
+  I was using what I learned to contribute in the programming community.
+
+-Made my own project for Hacktoberfest for beginners to contribute to
+  In the month of Octoberfest, Github and Digital Ocean sponsor a month long coding, contributing,
+  programming event to get people involved in open source.  I was inspired and decided to create
+  a small project where newer coders can fork, clone and contribute a profile of themselves and a
+  'Hello World' script in their favorite language.  This was great for me because I was also able to
+  learn simple Github tasks of how to merge pull requests, write notes to other programmers and use
+  tags.
+
 -Began Codewars challenges more, mainly with building JavaScript algorithms
+
 -Began learning an immense amount of React
+
 -Learned about Props and State and how to differentiate the two
+
 -Learned how to build Components
+
 -Learned another mass amount of Redux
+
 -Learned the usage of Webpacks, Babel and JSX
+
 -Learned about React CRUD(it seems each stack has its own version of crud and rest)
