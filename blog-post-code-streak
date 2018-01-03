@@ -74,9 +74,21 @@ I committed code on Github for 62 days, I wanted to go for 75 days but it didn't
   now.
 
 -Learned about Props and State and how to differentiate the two
+  For most part while learning React I couldn't figure out props and state.  I was uncertain if
+  they were the same or different, and if different, how so.  It took me a good amount of googling,
+  article-reading and question asking to figure out the differences.  This is what I know:
+  -Both are POJO's, plain old JavaScript objects
+  -Both props and state changes trigger render update
+  -Both are deterministic
+  -Props: props is short for properties. Props are component configurations, immutable(not changeable)
+  as far as the component receiving them, component can't change its props but is responsible for
+  putting them together
+  -State: Begins with default value when a component mounts, serializable representation of one point
+  in time(state is changeable).  State and props are related and the state of one component may
+  often become the props of a child component.
 
 -Learned how to build Components
-
+  
 -Learned another mass amount of Redux
 
 -Learned the usage of Webpacks, Babel and JSX
