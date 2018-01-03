@@ -88,7 +88,15 @@ I committed code on Github for 62 days, I wanted to go for 75 days but it didn't
   often become the props of a child component.
 
 -Learned how to build Components
-  
+  Components let you split the UI into independent reusable pieces and keep the separation of each
+  piece.  It is an abstract class, therefore it makes sense to refer to React.Component directly.
+  There is typically a subclass attached with the Coomponent that defines and requires a render()
+  method.  Components have lifecycles for Mounting, Updating, Unmounting and Error-handling.
+  There are also class properties of 'defaultProps' & 'displayName' and instance properties of
+  'props' & 'state'.
+
+*this is going to be a very long blog post*
+
 -Learned another mass amount of Redux
 
 -Learned the usage of Webpacks, Babel and JSX
