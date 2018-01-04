@@ -14,7 +14,7 @@ Beer Finder or Journal/Log App
 -Beer Name: STRING, REQUIRED
 -Brewery Info: STRING, REQUIRED
 -Beer Type: STRING, REQUIRED
--ABV: INTEGER, REQUIRED
+-ABV: INTEGER, REQUIRED, DEFAULT NOT NULL
 -Pint Price: DECIMAL or FLOAT?
 -Is Seasonal: BOOLEAN
 -Notes: TEXT
@@ -24,8 +24,10 @@ Beer Finder or Journal/Log App
 *Can anyone just come to the site and en1ter beer information and update/delete it?*
 *Some beers that are already listed isn't theirs to alter*
 *Should I just make a beer site that allows displays of entered beers?*
-*This was suggested as a beer finder app, I want to POSSIBLY create a search bar that allows look up of
-certain beers by their traits of: Brewery, Type, ABV, Price*
+*This was suggested as a beer finder app, I want to POSSIBLY create a search bar that allows look up
+of certain beers by their traits of: Brewery, Type, ABV, Price*
+*Use public API to somehow retrieve information on beer after being searched(i don't know how to do
+this)*
 
 
 -Beer app needs to be able to input information
@@ -37,3 +39,11 @@ certain beers by their traits of: Brewery, Type, ABV, Price*
 -Read/Review the new beer
 -Update the beer that was made
 -Delete beer if needed
+
+
+RESTful routes
+/beer/ ---> index
+/beer/new ---> new
+/beer ---> create
+/beer/:beer_id ---> show, update, destroy
+/beer/:beer_id/edit ---> edit
