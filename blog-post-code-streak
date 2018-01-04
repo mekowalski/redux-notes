@@ -98,7 +98,32 @@ I committed code on Github for 62 days, I wanted to go for 75 days but it didn't
 *this is going to be a very long blog post*
 
 -Learned another mass amount of Redux
+  Redux is a fairly new topic for React, it was introduce by the its creator Dan Abramov in 2015.
+  It is considered brilliant in pairing with React but what is Redux exactly?  What I found in
+  my research of Redux is this: Redux is a stable, lightweight, state container for JavaScript apps.
+  Redux encapsulates your entire application's state in one place and the application's state is
+  immutable.  Because the original state or states are uchanged, this makes debugging easy because
+  there is isolation on the action that caused state change(s).  I found that although complex(for
+  me), Redux is quite simple.  Functions are used to call a reducer(a JavaScript reduce method) that
+  takes to parameters: an action and a next state.  Reducers are also pure functions therefore no
+  side effects occur.
 
--Learned the usage of Webpacks, Babel and JSX
+-Learned the usage of Webpack, Babel and JSX
+  Webpack is an efficient tool that, when working with a large application, helps organize the code
+  by splitting the application into multiple files.  Once the codebase is split into chunks then
+  they can be loaded on demand.  This helps reduce initial application loading time. Breaking
+  JavaScript code into modules is considered a great solution to handle organization.  Not only
+  does a module system enhance development, it enhances the user experience.
+
+  Babel is known as a transpiler, efficient and useful for its ability to turn JavaScript ES6 into
+  the code that runs on the browser being currently used.  Developers can virtually use all the
+  new ES6 features without sacrificing backwards compatibility for older browsers.  Babel not
+  only tracks ES6, it also tracks the next version of JavaScript.  Babel does not have time constraints
+  because it runs at compile time
+
+  JSX is a syntax extension to JavaScript.  JSX is a preprocessor step that adds XML syntax to
+  JavaScript.  It is used with React to describe with the UI should look like.  It may seem like a
+  template language but it is with full power of JavaScript.  Although React does not require use
+  of JSX, it is a helpful, visual aid when working with UI inside JavaScript code.
 
 -Learned about React CRUD(it seems each stack has its own version of crud and rest)
