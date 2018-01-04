@@ -125,5 +125,3 @@ I committed code on Github for 62 days, I wanted to go for 75 days but it didn't
   JavaScript.  It is used with React to describe with the UI should look like.  It may seem like a
   template language but it is with full power of JavaScript.  Although React does not require use
   of JSX, it is a helpful, visual aid when working with UI inside JavaScript code.
-
--Learned about React CRUD(it seems each stack has its own version of crud and rest)

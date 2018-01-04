@@ -3,8 +3,7 @@ Previous idea does not meet CRUD requirement
 
 Beer Finder or Journal/Log App
 -Beer Name
-  -Brewery
-  -Address
+  -Brewery Info
   -Beer Type (examples:ale, lager, stout, pale ale, pilsner, porter, wheat, barley wine, kolsch, dubbel,
   amber, blonde, brown, light)
   -Alcohol % By Volume(ABV)
@@ -12,10 +11,10 @@ Beer Finder or Journal/Log App
   -Is Seasonal/Regular?
   -Notes
 
--Beer Name: STRING
--Address: STRING
--Beer Type: STRING
--ABV: INTEGER
+-Beer Name: STRING, REQUIRED
+-Brewery Info: STRING, REQUIRED
+-Beer Type: STRING, REQUIRED
+-ABV: INTEGER, REQUIRED
 -Pint Price: DECIMAL or FLOAT?
 -Is Seasonal: BOOLEAN
 -Notes: TEXT
