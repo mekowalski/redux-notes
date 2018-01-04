@@ -1,6 +1,14 @@
 Different idea for final project
 Previous idea does not meet CRUD requirement
 
+`rails new beer-finder-app` (not sure about name)
+database with postgresql to deploy, can i use sqlite3?
+remove:jbuilder, turbolinks, coffee-rails
+addition to group dev test do: pry, pry-remote, rspec-rails, factory_girl_rails, database_cleaner
+addition to group test do: faker
+`bundle install`
+
+
 Beer Finder or Journal/Log App
 -Beer Name
   -Brewery Info
@@ -28,6 +36,8 @@ Beer Finder or Journal/Log App
 of certain beers by their traits of: Brewery, Type, ABV, Price*
 *Use public API to somehow retrieve information on beer after being searched(i don't know how to do
 this)*
+*If it's a beer finder app and I use data keys provided by public api, then it will just inform the
+user about the beer, display beer info. How do I use that data to modify and meet CRUD reqs?*
 
 
 -Beer app needs to be able to input information
