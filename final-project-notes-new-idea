@@ -43,6 +43,10 @@ user about the beer, display beer info. How do I use that data to modify and mee
 *Assuming routes as `/beer/:beer_id` instead of `/api/beer/:beer_id`*
 *somehow work with coordinates or an address??*
 *Build with test approach?*
+*need to persist data. how do i use a public api and save that info to my rails api?*
+*could i input random beer info and save that to the database?*
+*but then what help is the database i have if it's a beer finder app and users are supposed to
+be able to see beer data that's from the public api database? i am so confused*
 
 
 -Beer app needs to be able to input information
