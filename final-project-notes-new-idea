@@ -5,8 +5,9 @@ Previous idea does not meet CRUD requirement
 database with postgresql to deploy, can i use sqlite3?
 remove:jbuilder, turbolinks, coffee-rails
 addition to group dev test do: pry, pry-remote, rspec-rails, factory_girl_rails, database_cleaner
-addition to group test do: faker
+addition to group test do: faker, should-matchers(make concise model and association validations)
 `bundle install`
+configure shoulda-matchers in rails_helper.rb
 
 
 Beer Finder or Journal/Log App
@@ -41,6 +42,8 @@ user about the beer, display beer info. How do I use that data to modify and mee
 *Suggestion of using rails API*
 *Assuming routes as `/beer/:beer_id` instead of `/api/beer/:beer_id`*
 *somehow work with coordinates or an address??*
+*Build with test approach?*
+
 
 -Beer app needs to be able to input information
 -Can index all the beers, certain beers by attributes
