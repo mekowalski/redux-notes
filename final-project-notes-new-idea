@@ -48,6 +48,9 @@ user about the beer, display beer info. How do I use that data to modify and mee
 *but then what help is the database i have if it's a beer finder app and users are supposed to
 be able to see beer data that's from the public api database? i am so confused*
 *email regarding use of public api without creating account*
+*how to create a form and submit and persist data*
+*if a database is being used, how would i save a keyword in the search? what would i use that
+persisted data for?*
 
 
 -Beer app needs to be able to input information
