@@ -29,12 +29,10 @@ Beer Finder or Journal/Log App
 -Notes: TEXT
 
 
-*How to makes this without Auth or Login?*
-*Can anyone just come to the site and en1ter beer information and update/delete it?*
-*Some beers that are already listed isn't theirs to alter*
+
 *Should I just make a beer site that allows displays of entered beers?*
 *This was suggested as a beer finder app, I want to POSSIBLY create a search bar that allows look up
-of certain beers by their traits of: Brewery, Type, ABV, Price*
+of certain beers by their traits of: *
 *Use public API to somehow retrieve information on beer after being searched(i don't know how to do
 this)*
 *If it's a beer finder app and I use data keys provided by public api, then it will just inform the
@@ -56,6 +54,19 @@ get on a track and actually do the freaking project*
 *okay stop the pitying, stressing and begin the working please please please*
 *maybe just make this a log app*
 *use Faker gem to play with dummy data. Faker::Beer*
+
+//with help
+*model would be a search, attribute would be a keyword*
+  model: query string, STRING
+       : type, STRING
+       validate with options
+
+*multiple kinds of searches*
+-location, beer type, brewery name
+-save all the searches input
+-use that save to form api requests
+-have views to look for previous searches and display those results
+-store query string and type
 
 
 -Beer app needs to be able to input information
