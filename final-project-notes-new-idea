@@ -40,29 +40,25 @@ user about the beer, display beer info. How do I use that data to modify and mee
 *Suggestion of using rails API*
 *Assuming routes as `/beer/:beer_id` instead of `/api/beer/:beer_id`*
 *somehow work with coordinates or an address??*
-*Build with test approach?*
 *need to persist data. how do i use a public api and save that info to my rails api?*
 *could i input random beer info and save that to the database?*
 *but then what help is the database i have if it's a beer finder app and users are supposed to
 be able to see beer data that's from the public api database? i am so confused*
-*email regarding use of public api without creating account*
 *how to create a form and submit and persist data*
 *if a database is being used, how would i save a keyword in the search? what would i use that
 persisted data for?*
-*maybe schedule 1:1 with someone to discuss my struggles and ideas. get some direction, clarity,
-get on a track and actually do the freaking project*
-*okay stop the pitying, stressing and begin the working please please please*
-*maybe just make this a log app*
 *use Faker gem to play with dummy data. Faker::Beer*
 
 //with help
 *model would be a search, attribute would be a keyword*
-  model: query string, STRING
+  model SEARCH: query string, STRING
        : type, STRING
-       validate with options
+       validate with options of beer type, brewery name or all
 
 *multiple kinds of searches*
--location, beer type, brewery name
+-location, beer type, brewery name(location not included in the GET: /search endpoint)
+-the BreweryDB site has many options for endpoints but thinking of just using search for the main
+model with 2 attributes
 -save all the searches input
 -use that save to form api requests
 -have views to look for previous searches and display those results
