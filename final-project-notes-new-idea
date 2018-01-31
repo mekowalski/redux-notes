@@ -82,3 +82,17 @@ RESTful routes
 /beer ---> create
 /beer/:beer_id ---> show, update, destroy
 /beer/:beer_id/edit ---> edit
+
+
+[i wanted to work today but i became so overwhelmed with everything.  i couldn't focus, i tried
+watching some programming and ten minutes was too long.  i tried to read up on 'create-react-app'
+and it seemed to be another language.  at some point i went on so many rabbit holes that i ended
+up reading an article about how coding is politically involved and is working on changing
+dynamic relationships for everyone to have(it was intriguing).  i'm still reviewing so much React
+and redux because i still am not 100% competent to program in that library or container.  i
+noticed that i spent almost a month just reading, reviewing, worrying and aimlessly learning to
+program.  instead i realized, after a meet and help with another experienced programmer, that i
+haven't tried being adventurous and haven't thought of the project as a fun game, challenge.  this
+is what i am going to do now.  i'm going to ask tons of questions, i'm not going to fear code,
+i will build a fun application, my project may take a moment to be but it will come to be.  because
+this all is at my pace, my race, my rules.]
