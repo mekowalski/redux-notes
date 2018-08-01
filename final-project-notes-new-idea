@@ -10,27 +10,25 @@ addition to group test do: faker, should-matchers(make concise model and associa
 configure shoulda-matchers in rails_helper.rb
 
 
-Beer Finder or Journal/Log App
+Beer Finder App
+API: https://untappd.com/api/docs#activityfeed
 -Beer Name
-  -Brewery Info
+  -Beer Description
   -Beer Type (examples:ale, lager, stout, pale ale, pilsner, porter, wheat, barley wine, kolsch, dubbel,
   amber, blonde, brown, light)
   -Alcohol % By Volume(ABV)
-  -Pint Price
-  -Is Seasonal/Regular?
-  -Notes
+  -Company
+  -Location
 
 -Beer Name: STRING, REQUIRED
--Brewery Info: STRING, REQUIRED
+-Beer Description: TEXT, REQUIRED
 -Beer Type: STRING, REQUIRED
 -ABV: INTEGER, REQUIRED, DEFAULT NOT NULL
--Pint Price: DECIMAL or FLOAT?
--Is Seasonal: BOOLEAN
--Notes: TEXT
+-Company: STRING, REQUIRED
+-Location: STRING, REQUIRED
 
 
 
-*Should I just make a beer site that allows displays of entered beers?*
 *This was suggested as a beer finder app, I want to POSSIBLY create a search bar that allows look up
 of certain beers by their traits of: *
 *Use public API to somehow retrieve information on beer after being searched(i don't know how to do
@@ -57,8 +55,7 @@ persisted data for?*
 
 *multiple kinds of searches*
 -location, beer type, brewery name(location not included in the GET: /search endpoint)
--the BreweryDB site has many options for endpoints but thinking of just using search for the main
-model with 2 attributes
+-going to use untappd instead
 -save all the searches input
 -use that save to form api requests
 -have views to look for previous searches and display those results
