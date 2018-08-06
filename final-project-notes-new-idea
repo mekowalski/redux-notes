@@ -27,6 +27,20 @@ API: https://untappd.com/api/docs#activityfeed
 -Company: STRING, REQUIRED
 -Location: STRING, REQUIRED
 
+Model: Beer
+  -name, description, ABV
+  -beer belongs to company
+  -beer belongs to type
+Model: Company
+  -name
+  -company has many beers
+  -company has many type through beer(?)
+Model: Type
+  -name
+  -type has many beers
+
+
+
 
 
 *This was suggested as a beer finder app, I want to POSSIBLY create a search bar that allows look up
