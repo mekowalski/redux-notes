@@ -28,7 +28,7 @@ API: https://untappd.com/api/docs#activityfeed
 -Location: STRING, REQUIRED
 
 Model: Beer
-  -name, description, ABV
+  -name, description, ABV, location
   -beer belongs to company
   -beer belongs to type
 Model: Company
