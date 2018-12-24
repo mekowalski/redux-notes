@@ -1,8 +1,11 @@
-During larger React applications, state becomes more spread out in different components
+BENEFITS OF MOVING TO REDUX
+Single Source Of Truth
+-When React apps become larger, state becomes more spread out between different components
+-Component tree will then become obscured on how comps are handling/sharing data with each other
 
-Redux encourages storing all necessary data in application as plain JavaScript object called state
-*application state holding all data simply as JavaScript object, no method on object and memory
-efficient*
+
+Redux encourages storing all necessary data in application as plain JavaScript object separate from comps
+eg:
 state = {
   user: {
     name: 'malind',
@@ -19,6 +22,9 @@ state = {
     }
   ]
 }
+*Similar to comp state, all data is held in an object
+*Since Redux state is separate from comp tree, any part of this data can be grabbed for any component that
+ needs it, by connecting components
 
 
 HOW TO HOLD UP STATE
