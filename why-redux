@@ -35,10 +35,10 @@ ACCESSING THE STATE
 -Every component allowed can get and update state data regardless of the position on the component tree
 
 
-HOW TO HOLD UP STATE
-The data is held in one place and upon updating, an action is sent with strict instructions Redux
-uses for how to update
-*anytime a state is updated in Redux, action must first be created in plain old JavaScript object*
+UPDATING THE STATE
+-All data is help in one place with some configuration, allowing reading as props in regular React comps
+-To update data, send an action, set with strict instructions that Redux will allow use for updating
+eg:
 action = {
   type: 'ADD_INTEREST',
   newInterest: {
@@ -46,7 +46,10 @@ action = {
     type: 'education'
   }
 }
+*Action -> State -> Updated State
+*ACTION created telling REDUX how to incorporate the update into the STATE
+*Any time Redux state is update, an action must be created first
+*This action is simple plain JavaScript
 
-How Redux allows update on state:
-Action -> State -> Updated State
--Action combined with previous state leads to an updated state
+-Actions maintain and update the Redux state
+-These state changes will trigger React's Component Lifecycle and the cycle of data is made
