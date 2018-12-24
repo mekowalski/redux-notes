@@ -27,6 +27,14 @@ state = {
  needs it, by connecting components
 
 
+ACCESSING THE STATE
+-Provide access by wrapping the component tree(similar to Router), in order to make state available for
+ components to connect to
+-Access to Redux functions allow grabbing state & mapping it the props being given to a component
+-Complex interaction between components is made easier
+-Every component allowed can get and update state data regardless of the position on the component tree
+
+
 HOW TO HOLD UP STATE
 The data is held in one place and upon updating, an action is sent with strict instructions Redux
 uses for how to update
