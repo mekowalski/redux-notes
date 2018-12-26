@@ -76,3 +76,11 @@ function render() {
   render()
 }
 *Every time the DISPATCH function runs ensures that RENDER() runs also
+
+
+OVERALL
+-DISPATCH function solves 2 problems
+  1. Persisted changes to STATE
+  2. Ensured each time the STATE updates, HTML updates to reflect change by calling the RENDER() method
+
+-React virtually re-renders and updates the DOM with smallest amount of changes to ensure performance
