@@ -15,11 +15,13 @@ state -> {count: 1}
 
 FUNCTION TO THE RESCUE
 -Write a function to take in previous state, action and produce a new state
+eg:
 function changeState(state, action) {
   if (action.type === 'INCREASE_COUNT') {
     return {count: state.count + 1}
   }
 }
+*If action's type property is String INCREASE_COUNT, then increment and return new state
 *action.type: action always needs type property so the function knows what to do*
 
 -Customary yo use switch case statements, conditionals would become messy
@@ -43,7 +45,11 @@ function changeState(state, action) {
 changeState(state, action) => {count: 1}
 
 -Significance of Redux is to summarize, this is always the core flow of Redux:
-Action -> Function -> Updated State
+ACTION ---> FUNCTION ---> UPDATED STATE
+
+-Combination of current state and an action(reduces into 1 value)
+-Reducer is the correct, technical term where an ACTION is sent to REDUCER then updates application STATE
+ACTION ---> REDUCER ---> UPDATED STATE
 
 
 REDUCERS ARE PURE FUNCTIONS
