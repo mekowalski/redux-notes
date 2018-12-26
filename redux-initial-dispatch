@@ -1,5 +1,13 @@
-Able to dispatch with any action type as long as it doesn't hit switch statement, dispatch action
-type of '@@INIT' by convention
+-Dispatching initial action gives initial render of view
+-Dispatching initial action gives an initial setup to store's STATE
+
+-Able to dispatch with any action type as long as it doesn't hit switch statement, dispatch action
+ type of '@@INIT' by convention
+-DISPATCH function calls RENDER() function, but a meaningless action will return the existing STATE(default)
+-Dispatch an action of type @@INIT
+eg: dispatch({ type: '@@INIT' })
+*HTML begins at 0 and is appropriately updated every time dispatch is called
+
 
 DISPATCH AN INITIAL ACTION TO SET UP INITIAL STATE
 -The previous initial value of state in JavaScript is:
