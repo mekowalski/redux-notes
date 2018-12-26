@@ -1,19 +1,43 @@
+-Persist changes to state
+-Display changes to state in the view
+
+
 BUILDING A COUNTER APPLICATION
 let state = {count: 0}
 let action = {type: 'INCREASE_COUNT'}
 
 function changeState(state, action) {
   switch (action.type) {
-    care 'INCREASE_COUNT':
+    case 'INCREASE_COUNT':
       return {count: state.count + 1}
     default:
       return state
   }
 }
 changeState(state, action) => {count: 1}
-^^Problem with changeState funtion, the state never increase beyond one
+^^Problem with changeState function, the state never increase beyond one
+changeState(state, {type: 'INCREASE_COUNT'}) => {count: 1}
+changeState(state, {type: 'INCREASE_COUNT'}) => {count: 1}
+changeState(state, {type: 'INCREASE_COUNT'}) => {count: 1}
+*It starts with 0 and while changeState function returns one more than tat, the count still returns 0
 
-*Need to persist the change and encapsulate the process in a function
+
+PERSIST STATE
+-Need to persist the change and encapsulate the process in a function
+-Reassign STATE to return value of the REDUCER
+-The next time changeState is called, it uses the updated STATE in its arguments
+-Encapsulate this procedure into a function to be called and persist the changed named DISPATCH
+eg:
+let state = {count: 0}
+
+function changeState(state, action) {
+  switch (action.type) {
+    case 'INCREASE_COUNT':
+      return {count: state.count + 1}
+    default:
+      return state
+  }
+}
 
 function dispatch(action) {
   state = changeState(state, action)
