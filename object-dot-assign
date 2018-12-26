@@ -3,4 +3,13 @@ Object Spread Operator(...array)
 
 -Core of Redux is to NEVER mutate state, often times, Object.assign() will be used to create copies of
  objects with new/update values
--Object.assign()
+-Object.assign() takes in any number of arguments, copies from Left to Right the properties each object is
+ passed as argument
+eg:
+let dog = {id: 1, na,e: 'Caroga', color: 'brown', age: 5}
+
+//if Caroga has a birthday(which she does) then write
+let olderDog = Object,assign({}, dog, {age: dog.age + 1})
+*Start with new empty object({})
+*Copy everything over from original dog
+*Then overwrite the age property with a new value
