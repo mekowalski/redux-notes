@@ -1,0 +1,6 @@
+Object Spread Operator(...array)
+-Incorporated in standard JS and is proposed for future version of JS
+
+-Core of Redux is to NEVER mutate state, often times, Object.assign() will be used to create copies of
+ objects with new/update values
+-Object.assign()

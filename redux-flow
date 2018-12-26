@@ -71,7 +71,7 @@ function reducer(state, action){
 2. Pure functions have no side effects, no effect outside of the function, they only return value
   -Returned object is not the same object that is passed as an argument to function
   -Rather a new object that is constructed each time the REDUCER is called
-  -Stick to constraints of Pure Function by not changing any value that is defined outside of the fucntion
+  -Stick to constraints of Pure Function by not changing any value that is defined outside of the function
 
 -Lack of side effects means the functions are predictable, contained and can be used without
 affecting the rest of the application
