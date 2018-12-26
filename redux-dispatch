@@ -46,7 +46,7 @@ dispatch({type: 'INCREASE_COUNT'}) => 1
 dispatch({type: 'INCREASE_COUNT'}) => 2
 dispatch({type: 'INCREASE_COUNT'}) => 3
 
--Declare state to equal an object ''{count: 0}'
+-Declare state to equal an object '{count: 0}'
 -Define reducer and new function 'dispatch'
 -Call 'disptach' function that calls the 'changeState' function and passed the action object
 -It will reference the already declared state and pass that through
@@ -61,7 +61,18 @@ function render() {
 }
 
 -Making sure that the 'render()' function runs every time the 'dispatch' function is called
-function dispatch(action) {
-  state = changeState(state, action)
+//let state = {count: 0}
+
+//changeState Function {
+  ...code
+}
+
+//render() function {
+  ...code
+}
+
+//dispatch Function {
+  ...code
   render()
 }
+*Every time the DISPATCH function runs ensures that RENDER() runs also
