@@ -77,3 +77,13 @@ function reducer(state, action){
 affecting the rest of the application
 -The specific reducer function never updates the previous state but rather creates a new state
 object
+
+
+OVERALL
+1. Application state held in JavaScript object, updated by passing bot ACTION and old STATE to REDUCER
+2. Change STATE by
+  a. Creating and ACTION with object TYPE key
+  b. Pass ACTION as an argument when REDUCER is called
+  c. Then produces a new STATE
+3. Reducer is a pure function that, given same arguments of state/action, will always produce same new
+  STATE.  It never updates the previous STATE but rather creates a new STATE object
