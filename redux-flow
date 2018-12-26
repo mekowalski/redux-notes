@@ -1,4 +1,11 @@
-Somehow action updates the state:
+-Pure functions update application state
+-Fundamentals of Redux flow
+-Adhere to constraints of pure functions
+
+
+REVIEW
+-All state is a JavaScript Object, that actions are in another JavaScript object called an ACTION
+-Somehow action updates the state:
 let state = {count: 0}
 let action = {type: 'INCREASE_COUNT'}
 
