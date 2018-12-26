@@ -13,3 +13,12 @@ let olderDog = Object,assign({}, dog, {age: dog.age + 1})
 *Start with new empty object({})
 *Copy everything over from original dog
 *Then overwrite the age property with a new value
+
+-While effective, Object.assign() can make REDUCERS difficult to read
+-Alternative approach is Object Spread Op(...) to copy enumerable properties from one object to another
+eg:
+let dog = {id: 1, na,e: 'Caroga', color: 'brown', age: 5}
+
+let olderDog = {...dog, age: dog.age + 1}
+*Return new object that contains all key-pair values from dog(...dog)
+*Copied over with age key overwritten with a new value
