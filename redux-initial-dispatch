@@ -1,6 +1,8 @@
 -Dispatching initial action gives initial render of view
 -Dispatching initial action gives an initial setup to store's STATE
 
+
+DISPATCH INITIAL ACTION TO RENDER VIEW
 -Able to dispatch with any action type as long as it doesn't hit switch statement, dispatch action
  type of '@@INIT' by convention
 -DISPATCH function calls RENDER() function, but a meaningless action will return the existing STATE(default)
@@ -37,7 +39,10 @@ function render() {
 
 dispatch({type: '@@INIT'})
 => Uncaught TypeError: Cannot read property 'count' of undefined(…)
-*render() breaks because state is undefined, ES6 allows passing of default value to initial state
+*RENDER() breaks because state is undefined
+
+-ES6 allows passing of default value to initial state
+eg:
 function changeState(state = {count: 0}, action) {
   //Remaining function code
 }
@@ -50,3 +55,6 @@ dispatch({type: 'INCREASE'}) => { counter: 1 }
 
 -Essentially, state begins with undefined and is never defined again
 -Reducer's default argument is set up to initial state but never used again
+-@@INIT benefit
+  1. Initial rendering of STATE
+  2. Ability to set initial STATE in REDUCER
