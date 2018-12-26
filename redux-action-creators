@@ -1,6 +1,12 @@
 Actions are plain old JavaScript objects(POJO), but not to be ignored
+
+
+PURPOSE OF ACTIONS
+-In Rails, a clicked link kicks off a request that is ultimately passed to the controller
+-Then possibly changing the database
 -In Redux when a button is clicked, an action is dispatched and the reducer takes information from
 that action to change the state
+eg: 
 
 
 STRUCTURING ACTIONS
