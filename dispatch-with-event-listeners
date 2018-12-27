@@ -79,10 +79,29 @@ let state
 function reducer(state = {count: 0}, action) {
   //reducer function here
 }
+*In the browser console, dispatch({type: 'INCREASE_COUNT'}) still returns undefined, but HTML displays
 
 
+@@INIT
+-This does not increase STATE but does return the default STATE and then call RENDER()
 -Each time the page is opened, the default state should show and not increase
 -Include 'dispatch({type: '@@INIT'})' to the end of the JavaScript file
+eg:
+let state
+
+function reducer {
+  ...code
+}
+
+function dispatch {
+  ...code
+}
+
+function render {
+  ...code
+}
+
+dispatch({type: @@INIT})
 
 
 --Integrate dispatch with user event
