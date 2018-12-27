@@ -26,3 +26,18 @@ function() {
     render()
   }
 }
+*DISPATCH is now a private function
+*Will still need to expose it in order to use certain events
+
+*A function that has the DISPATCH function return a JS object called STORE
+*Need to call a method name createStore
+eg:
+function createStore() {
+  state
+
+  dispatch function {
+    ...code
+  }
+
+  return { dispatch }
+}
