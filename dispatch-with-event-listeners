@@ -7,7 +7,7 @@ Action -> Reducer -> New State
 
 
 REBUILD DISPATCH FUNCTION AND REDUCER
-1. Pass in an action and previous state to reducer, then reducer should return new state
+STEP 1. Pass in an action and previous state to reducer, then reducer should return new state
 (To open index.html in Linux from terminal run: google-chrome ./index.html)
 eg:
 let state = { count: 0}
@@ -25,7 +25,7 @@ function changeState(state, action) {
 *Need to assign state to return value of reducer each time reducer is called
 
 
-2. Wrap execution of reducer in a function that is called dispatch
+STEP 2. Wrap execution of reducer in a function that is called dispatch
 -Reassign STATE by adding dispatch function to reducer.js file
 -DISPATCH function should receive an argument of action
 eg:
@@ -38,7 +38,7 @@ function dispatch(action) {
 *Currently, this state is not reflected in the HTML*
 
 
-3. Use render function to display the state
+STEP 3. Use render function to display the state
 -Function to place the count on the page, name the function render()
 eg:
 function render() {
@@ -57,7 +57,7 @@ function dispatch(action) {
 }
 
 
-4. Initial state set in the reducer
+STEP 4. Initial state set in the reducer
 -Initial STATE set to a default argument in the REDUCER
 eg:
 function reducer(state = {count: 0}, action) {
@@ -101,17 +101,19 @@ function render {
   ...code
 }
 
-dispatch({type: @@INIT})
+dispatch({type: '@@INIT'})
 
 
---Integrate dispatch with user event
--dispatch is responsible for updating state and re-rendering, action should be dispatched each
-time user clicks, attach 'dispatch' execution to click event
+STEP 5. Integrate dispatch with user event
+-DISPATCH is responsible for updating state and re-rendering
+-ACTION should be dispatched each time user clicks
 
+-Attach 'dispatch' execution to click event
+eg:
 let button = document.getElementById('button')
 button.addEventListener('click', function() {
   dispatch({type: 'INCREASE_COUNT'})
 })
-*now dispatches an action of type increase, updates state then updates view*
-*User can call the dispatch method by executing dispatch from inside the callback of an event
-handler*
+*WOOHOO! now dispatches an action of type increase, updates state then updates view
+*Clicking the button will display the INCREASE value
+*User can call the dispatch method by executing dispatch from inside the callback of an event handler
