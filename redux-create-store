@@ -8,3 +8,21 @@ eg:
 function() {
   let state
 }
+*When dispatch({type: '@@INIT'}) is called, the code breaks with error of DISPATCH is not defined
+*RENDER() also won't have access to STATE
+
+
+MOVE CODE COMMON TO JS APP INSIDE NEW FUNCTION
+*Redux Pattern
+ACTION ---> REDUCER ---> STATE
+-DISPATCH is called with an ACTION that calls the REDUCER then returns the STATE
+-Move DISPATCH inside new method to encapsulate both STATE and DISPATCH
+eg:
+function() {
+  let state
+
+  function dispatch(action) {
+    state = changeState(state, action)
+    render()
+  }
+}
