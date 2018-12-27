@@ -41,3 +41,11 @@ function createStore() {
 
   return { dispatch }
 }
+*Code almost works
+
+*Call createStore and set the returned STORE equal to a variable
+*Change remaining code to ensure dispatch is properly referenced
+(i don't know what's going on here, still receiving an error that changeState is not defined)
+eg:
+let store = createStore()
+store.dispatch({type: '@@INIT'})
