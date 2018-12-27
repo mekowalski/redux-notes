@@ -1,0 +1,4 @@
+ENCAPSULATE APPLICATION STATE BY WRAPPING IN A FUNCTION
+(Follow along with redux-create-store-v)
+-STATE variable defined at the stop of the code holds a representation of all the data needed to display
+-Not good practice if variable is Global and can be overwritten
