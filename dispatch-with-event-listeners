@@ -57,7 +57,19 @@ function dispatch(action) {
 }
 
 
---Initial state set in the reducer
+4. Initial state set in the reducer
+-Initial STATE set to a default argument in the REDUCER
+eg:
+function reducer(state = {count: 0}, action) {
+  switch (action.type) {
+    case 'INCREASE_COUNT':
+      return {count: state.count + 1}
+    default:
+      return state
+  }
+}
+
+
 let state
 
 function changeState(state = {count: 0}, action) {
