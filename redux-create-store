@@ -49,3 +49,26 @@ function createStore() {
 eg:
 let store = createStore()
 store.dispatch({type: '@@INIT'})
+
+
+-This object called a STORE contains app's STATE
+-Need a way to retrieve that data from STORE
+-STORE should respond to another method getState
+-This will then return STATE that can be used elsewhere in app
+eg:
+function createStore() {
+  state
+
+  dispatch function {
+    ...code
+  }
+
+  function getState() {
+    return state
+  }
+
+  return {
+    dispatch,
+    getState
+  }
+}
