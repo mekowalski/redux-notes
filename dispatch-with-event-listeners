@@ -34,17 +34,27 @@ function dispatch(action) {
 }
 *Calling dispatch({type: 'INCREASE_COUNT'}) => undefined
 *Though the STATE value does change
-*this now keeps the state changed(update) and returns the 'state'*
-*currently, this state is not reflected in the HTML*
+*This now keeps the state changed(update) and returns the 'state'*
+*Currently, this state is not reflected in the HTML*
 
 
---Use render function to display the state
+3. Use render function to display the state
+-Function to place the count on the page, name the function render()
+eg:
 function render() {
   let container = document.getElementById('container')
   container.textContent = state.count
 }
-*reflects the current count*
-*render() should tie with dispatch function* (L23)
+*Call render() in browser console and the HTML number is displayed
+*Counter is displayed after running dispatch({type: 'INCREASE_COUNT'}) followed by render()
+*Reflects the current count
+
+*Since RENDER() and DISPATCH() functions go together, they should be put together
+eg:
+function dispatch(action) {
+  state = reducer(state, action)
+  render(
+}
 
 
 --Initial state set in the reducer
