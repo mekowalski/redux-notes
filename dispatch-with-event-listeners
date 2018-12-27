@@ -68,13 +68,18 @@ function reducer(state = {count: 0}, action) {
       return state
   }
 }
+*Remove let state = that is replaced in REDUCER method
+*Declare STATE in the beginning of the REDUCER function
+*In browser console there is an error regarding STATE not defined
 
-
+*Therefore STATE still needs to be declared
+eg:
 let state
 
-function changeState(state = {count: 0}, action) {
-  //Reducer code here
+function reducer(state = {count: 0}, action) {
+  //reducer function here
 }
+
 
 -Each time the page is opened, the default state should show and not increase
 -Include 'dispatch({type: '@@INIT'})' to the end of the JavaScript file
