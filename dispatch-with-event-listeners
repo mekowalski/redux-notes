@@ -1,9 +1,15 @@
+APPLICATION GOAL
+-Button click should change the STATE
+-STATE change should be rendered
+
 Redux Review
 Action -> Reducer -> New State
 
 
 REBUILD DISPATCH FUNCTION AND REDUCER
--Pass in an action and previous state to reducer, then reducer should return new state
+1. Pass in an action and previous state to reducer, then reducer should return new state
+(To open index.html in Linux from terminal run: google-chrome ./index.html)
+eg:
 let state = { count: 0}
 
 function changeState(state, action) {
