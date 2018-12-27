@@ -72,3 +72,18 @@ function createStore() {
     getState
   }
 }
+
+-Code will work with modification to RENDER()
+eg:
+function render() {
+  let container = document.getElelmentById('container')
+  container.textContent = store.getState().count
+}
+
+-Then update button event listener to use store.dispatch
+eg:
+let button = document.getElementById('button')
+
+button.addEventListener('click', function() {
+  store.dispatch({ type: 'INCREASE_COUNT '})
+})
