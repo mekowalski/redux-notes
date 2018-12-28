@@ -89,3 +89,13 @@ let button = document.getElementById('button')
 button.addEventListener('click', function() {
   store.dispatch({ type: 'INCREASE_COUNT '})
 })
+
+
+ABSTRACT THE REDUCER
+-Redux works by having an action dispatched, calling the reducer then rendering the view
+-createStore()'s DISPATCH method does this
+eg:
+function dispatch(action) {
+  state = changeCount(state, action)
+  render()
+}
