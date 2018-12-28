@@ -121,8 +121,23 @@ changeCount function {
 }
 
 let store = createStore(changeCount)
-//createStore will tale the changeCount reducer argument
+//createStore will take the changeCount reducer argument
 
 let button
 
 button event listener
+
+
+OVERALL
+-This setup provided a fully functional Store that encapsulates the STATE
+-Provides a controlled way to write DISPATCH and retrieve getState
+-Code that is common to any JS app following this pattern^^^ would be wrapped inside a Store function
+
+-Particular to specific app
+-All that is implemented outside of Store that is generic to app following this pattern
+  -How the DOM is updated in RENDER() function
+  -What events trigger a DISPATCH method
+  -How STATE should change due to different actions being dispatched
+
+-Implementation inside Store method
+  -Call DISPATCH should call a REDUCER, reassign the STATE and RENDER a change 
