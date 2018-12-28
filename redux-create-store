@@ -106,3 +106,23 @@ function dispatch(action) {
 -Want createStore to be generic enough for any JavaScript application
 -Therefore make the REDUCER an argument to the createStore function
 -Then pass through the REDUCER function when invoking createStore
+eg:
+function createStore(reducer) {
+  dispatch function
+
+  getState function
+
+  return
+    dispatch, getState
+}
+
+changeCount function {
+  ...code
+}
+
+let store = createStore(changeCount)
+//createStore will tale the changeCount reducer argument
+
+let button
+
+button event listener
