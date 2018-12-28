@@ -99,3 +99,10 @@ function dispatch(action) {
   state = changeCount(state, action)
   render()
 }
+
+-changeCount REDUCER isn't moved into the createStore function
+-It is particular to the appilcation
+
+-Want createStore to be generic enough for any JavaScript application
+-Therefore make the REDUCER an argument to the createStore function
+-Then pass through the REDUCER function when invoking createStore
