@@ -24,3 +24,22 @@ console.log(store.getState())
     }
   ]
 }
+
+
+2. State is Read-Only
+-The only way to change the STATE is the emit an ACTION, an object describing what happened
+-Neither Views nor Callbacks will ever write directly to STATE
+-They express an intent to transform STATE
+-Actions are just plain objects that can be logged, serialized, stored and later replayed for debugging or
+ testing purposes
+
+eg:
+store.dispatch({
+  type: 'COMPLETE_TODO',
+  index: 1
+})
+
+store.dispatch({
+  type: 'SET_VISIBILITY_FILTER',
+  filter: 'SHOW_COMPLETED'
+})
