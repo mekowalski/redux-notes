@@ -26,3 +26,8 @@ eg:
 
 -Returning the previous STATE in the default case of a SWITCH statement is important for returning any
  unknown action
+
+-Multiple REDUCERS manage its own part of the Global STATE
+-STATE parameter is different for every REDUCER and corresponds to the part of STATE that it manages
+-When an app becomes larger, REDUCERS can be split into separate files to keep completely independent and
+ mange different data
