@@ -5,3 +5,22 @@ Redux in Three Fundamental Principles
 -Easy to create universal apps
 -A single tree also makes debugging or inspection of an application easier
 -Persisting application's state in development for faster development cycle
+
+-Some traditional and difficult functionality can suddenly become trivial to implement, if all the STATE is
+ stored in a single tree
+eg:
+console.log(store.getState())
+=>
+{
+  visibilityFilter: 'SHOW_ALL',
+  todos: [
+    {
+      text: 'Consider using Redux',
+      completed: true,
+    },
+    {
+      text: 'Keep all state in a single tree',
+      completed: false
+    }
+  ]
+}
