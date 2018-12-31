@@ -1,0 +1,7 @@
+Redux in Three Fundamental Principles
+
+1. Single Source of Truth
+-The STATE of the whole application is stored in an object tree within a single STORE
+-Easy to create universal apps
+-A single tree also makes debugging or inspection of an application easier
+-Persisting application's state in development for faster development cycle
