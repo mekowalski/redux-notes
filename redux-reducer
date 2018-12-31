@@ -12,3 +12,17 @@ eg: (previousState, action) => nextState
   *Mutation of its arguments
   *Perform side effects like API calls and routing transitions
   *Call non-pure functions eg: Date.now(), Math.random(), etc
+
+-It should only calculate the nextState and return it
+*No surprises, side effects, API calls, mutations
+*Just a calculation
+
+-Create a copy with Object.assign() as to not mutate the STATE
+*Must supply an empty object as first parameter
+eg:
+  return Object,assign({}, state, {
+    ...code here
+  })
+
+-Returning the previous STATE in the default case of a SWITCH statement is important for returning any
+ unknown action
