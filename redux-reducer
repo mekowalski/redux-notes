@@ -1,2 +1,14 @@
 REDUCERS: Specify the application's state changes in response to ACTIONS sent to the STORE
 ACTIONS: Only described what happened, but now how the app's state changes
+
+-REDUCER is a pure function that takes in the PreviousState and an ACTION, and returnes the NextState
+eg: (previousState, action) => nextState
+
+-It's called a REDUCER because it's a function that would pass to:
+ Array.prototype.reducer(reducer, ?initialValue)
+
+-REDUCER should always stay pure
+-What should never be inside a REDUCER
+  *Mutation of its arguments
+  *Perform side effects like API calls and routing transitions
+  *Call non-pure functions eg: Date.now(), Math.random(), etc
