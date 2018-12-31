@@ -51,3 +51,44 @@ store.dispatch({
 -Return with a new state object, instead of mutating the previousState
 -Start with a single REDUCER, with app growth, split into smaller REDUCERS that manage specific parts og
  STATE tree
+
+-Since REDUCERS are functions, the order in which they're called in in programmer's control
+eg:
+//REDUCER
+function visibilityFilter(state = 'SHOW_ALL', action) {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter
+    default:
+      return state
+  }
+}
+
+//REDUCER
+function todos(state = [], action) {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case 'COMPLETE_TODO':
+      return state.map((todo, index) => {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+import { combineReducers, createStore } from 'redux'
+const reducer = combineReducers({ visibilityFilter, todos })
+const store = createStore(reducer)
