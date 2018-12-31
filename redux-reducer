@@ -1,0 +1,2 @@
+REDUCERS: Specify the application's state changes in response to ACTIONS sent to the STORE
+ACTIONS: Only described what happened, but now how the app's state changes
