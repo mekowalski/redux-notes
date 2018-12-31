@@ -43,3 +43,11 @@ store.dispatch({
   type: 'SET_VISIBILITY_FILTER',
   filter: 'SHOW_COMPLETED'
 })
+
+
+3. Changes Are Made with Pure Functions
+-Specify how STATE tree is transformed by ACTIONS, written by pure REDUCERS
+-REDUCERS are pure functions taking in previousState and an ACTION and returning the nextState
+-Return with a new state object, instead of mutating the previousState
+-Start with a single REDUCER, with app growth, split into smaller REDUCERS that manage specific parts og
+ STATE tree
