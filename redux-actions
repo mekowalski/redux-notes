@@ -1,0 +1,5 @@
+//refer to redux/examples/todo-list
+
+ACTIONS: Payloads of information that send data from the app to the STORE
+-The ONLY source of information for the STORE
+-Sent using store.dispatch()
