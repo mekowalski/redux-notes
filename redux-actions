@@ -10,3 +10,23 @@ ACTIONS: Payloads of information that send data from the app to the STORE
 eg: import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
 
 *in the example project, create another action to describe User marking Todo completed alongside ADD_TODO*
+
+
+ACTION CREATORS
+-Functions that create ACTIONS!!!
+-Redux action creators simply return ad ACTION
+eg:
+function addTodo(text) {
+  return {
+    type: ADD_TODO,
+    text
+  }
+}
+*Makes it easy to test
+*Traditional Flux triggers an action creator when DISPATCH is invoked
+
+-With Redux this isn't the case
+-Initiating a DISPATCH, pass he result to dispatch() function
+eg:
+dispatch(addTodo(text))
+dispatch(completeTodo(index))
