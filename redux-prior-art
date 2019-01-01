@@ -6,7 +6,22 @@ FLUX
 -Redux inspired by several qualities of Flux
 -Like FLux, Redux allows concentration of model update logic in certain layer of application
 eg: STOREs in Flux, REDUCERs in Redux
+
 -Instead of data mutation, both log every mutation as plain object called ACTION
 -Flux has DISPATCHER concept, REDUX does NOT
 -REDUX has Pure Functions instead, that are easy to compose
 -Flux is described as (previousSTATE, ACTION) => newSTATE
+
+-Redux assumes data is never mutated; use plain objects/arrays for STATE but mutating that inside REDUCERs
+ is discouraged
+-Always return new object{}
+
+
+ELM
+-Functional programming inspired by Haskell
+-Reinforces Model-View-Update architecture
+eg: (ACTIOn, STATE) => STATE
+
+-ELM is a language that benefits from enforced purity, static typing, out of box immutability and pattern
+ matching
+eg: CASE expression
