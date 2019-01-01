@@ -10,6 +10,8 @@
 REDUCERS: Specify the application's state changes in response to ACTIONS sent to the STORE
 ACTIONS: Only described what happened, but now how the app's state changes
 
+
+HANDLING ACTIONS
 -REDUCER is a pure function that takes in the PreviousState and an ACTION, and returnes the NextState
 eg: (previousState, action) => nextState
 
@@ -25,6 +27,9 @@ eg: (previousState, action) => nextState
 -It should only calculate the nextState and return it
 *No surprises, side effects, API calls, mutations
 *Just a calculation
+
+-Redux calls REDUCER with an undefined STATE for the first time
+-Allowing return of initial STATE of application
 
 -Create a copy with Object.assign() as to not mutate the STATE
 *Must supply an empty object as first parameter
