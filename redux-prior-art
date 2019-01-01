@@ -25,3 +25,14 @@ eg: (ACTIOn, STATE) => STATE
 -ELM is a language that benefits from enforced purity, static typing, out of box immutability and pattern
  matching
 eg: CASE expression
+
+
+IMMUTABLE
+-JS library implementing persistent data structure
+-REDUX doesn't care about how STATE is stored(can be plain object, Immutable object or other)
+-Consider (de)serialization for writing universal apps
+
+
+BAOBAB
+-Popular library for implementing immutable API for updating plain JS objects
+-Can use with REDUX but very little benefits
