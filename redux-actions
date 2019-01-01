@@ -30,3 +30,17 @@ function addTodo(text) {
 eg:
 dispatch(addTodo(text))
 dispatch(completeTodo(index))
+
+-Bound Action Creator automatically dispatches
+eg:
+const boundAddTodo = text => dispatch(addTodo(text))
+const boundCompleteTodo = index => dispatch(completeTodo(index))
+
+-And call it directly
+eg:
+boundAddTodo(text)
+boundCompleteTodo(index)
+
+-Action Creators can be asynchronous and have side-effects
+-dispatch() function can be accessed directly from STORE as store.dispatch()
+-More likely to access it using helper connect()
