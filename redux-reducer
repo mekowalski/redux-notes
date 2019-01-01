@@ -1,3 +1,12 @@
+//refer to redux/examples/todo-list
+
+-All application STATE is stored in a single object
+-What's minimal representationof app's STATE as an object
+  1. Select visibility filter
+  2. Actual list of todo items
+
+-May need to store some data, as well as some UI STATE in the STATE tree but try to keep this separate
+
 REDUCERS: Specify the application's state changes in response to ACTIONS sent to the STORE
 ACTIONS: Only described what happened, but now how the app's state changes
 
