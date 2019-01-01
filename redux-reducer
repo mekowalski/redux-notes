@@ -50,3 +50,9 @@ eg:
 HANDLING MORE ACTIONS
 -In examples/todo-list there are 3 actions total, already handling SET_VISIBILITY_FILTER, need to handle
  ADD_TODO & TOGGLE_TODO
+
+
+SPLITTING REDUCERS
+-Sometimes STATE fields depend on one another and more consideration is required
+-examples/todo-list isn't the case
+-Can easily split updating todos into a separate function
