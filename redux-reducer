@@ -45,3 +45,8 @@ eg:
 -STATE parameter is different for every REDUCER and corresponds to the part of STATE that it manages
 -When an app becomes larger, REDUCERS can be split into separate files to keep completely independent and
  mange different data
+
+
+HANDLING MORE ACTIONS
+-In examples/todo-list there are 3 actions total, already handling SET_VISIBILITY_FILTER, need to handle
+ ADD_TODO & TOGGLE_TODO
