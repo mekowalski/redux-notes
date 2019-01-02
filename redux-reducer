@@ -56,3 +56,8 @@ SPLITTING REDUCERS
 -Sometimes STATE fields depend on one another and more consideration is required
 -examples/todo-list isn't the case
 -Can easily split updating todos into a separate function
+
+-Redux provides combineReducers() utility that does the same boilerplate logic that Main Reducer does
+-combineReducers() generates a function that calls the REDUCERS with the slices of selected STATE,
+ combing their results into a single object
+-Also doesn't create a new object
