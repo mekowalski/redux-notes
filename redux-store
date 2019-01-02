@@ -1,4 +1,12 @@
 ACTIONS: Represent the facts about what happened
 REDUCERS: Update STATE according to the ACTIONS
 
-STORE: Is the object that brings them together
+STORE: Is the object that brings them together, responsiblities include:
+  -Hold application STATE
+  -Allow access to STATE via getState()
+  -Allow STATE to update via dispatch(action)
+  -Register listeners via subscribe(listener)
+  -Handle unregistering of listeners via function returned by subscribe(listener)
+
+-A Redux application will only have a SINGLE STORE
+-To split data handling, use Reducer Compostion instead of many STOREs
