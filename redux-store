@@ -1,3 +1,5 @@
+//refer to redux/examples/todo-list
+
 ACTIONS: Represent the facts about what happened
 REDUCERS: Update STATE according to the ACTIONS
 
@@ -10,3 +12,6 @@ STORE: Is the object that brings them together, responsiblities include:
 
 -A Redux application will only have a SINGLE STORE
 -To split data handling, use Reducer Compostion instead of many STOREs
+
+-Previously used combineReducers() to combine several REDUCERS into one
+-Now import and pass it to createStore()
