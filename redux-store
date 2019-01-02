@@ -1,0 +1,4 @@
+ACTIONS: Represent the facts about what happened
+REDUCERS: Update STATE according to the ACTIONS
+
+STORE: Is the object that brings them together

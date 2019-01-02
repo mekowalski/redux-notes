@@ -5,6 +5,7 @@ ACTIONS: Payloads of information that send data from the app to the STORE
 -Sent using store.dispatch()
 
 -Actions are plain JS objects, that must have a TYPE property indicating the type of action being performed
+-Actions describe WHAT HAPPENED, not how the application's STATE changes
 -TYPES typically are defined as string constants
 -Once App is large enough, consider moving TYPES into separate module
 eg: import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
