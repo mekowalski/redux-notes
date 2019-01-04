@@ -7,7 +7,28 @@ REDUX DATA LIFECYCLE
 1. You call store.dispatch()
   -ACTION is plain object describing WHAT HAPPENED
   -A brief snippet of news "Malind liked article 36"
+  -Can call store.dispatch(action) from anywhere in app, include Components and XHR callbacks
   eg:
   { type: 'LIKE_ARTICLE', articleID: 36 }
   { type: 'FETCH_USER_SUCCESS', response: {id: 3, name: 'Malind'} }
   { type: 'ADD_TODO', text: 'Read the Redux docs' }
+
+2. Redux STORE calls REDUCER function it's given
+  -STORE passes 2 arguments to the REDUCER: currentState and ACTION
+  eg:
+  let currentState = {
+    visibleTodoFilter: 'SHOE_ALL',
+    todos; [
+      {
+        text: 'Read the docs',
+        complete: false
+      }
+    ]
+  }
+
+  let action = {
+    type: 'ADD_TODO',
+    text: 'Understand the flow'
+  }
+
+  let nextState = todoApp(currentState, action)
