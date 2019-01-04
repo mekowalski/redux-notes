@@ -15,7 +15,9 @@ REDUX DATA LIFECYCLE
 
 2. Redux STORE calls REDUCER function it's given
   -STORE passes 2 arguments to the REDUCER: currentState and ACTION
+  -REDUCER is a pure function, only computes next STATE and should be predictable
   eg:
+  //Current app STATE(list of todos and chosen filter)
   let currentState = {
     visibleTodoFilter: 'SHOE_ALL',
     todos; [
@@ -26,9 +28,11 @@ REDUX DATA LIFECYCLE
     ]
   }
 
+  //Action being performed (adding a todo)
   let action = {
     type: 'ADD_TODO',
     text: 'Understand the flow'
   }
 
+  //Reducer returns the next app STATE
   let nextState = todoApp(currentState, action)
