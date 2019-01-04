@@ -36,3 +36,23 @@ REDUX DATA LIFECYCLE
 
   //Reducer returns the next app STATE
   let nextState = todoApp(currentState, action)
+
+3. Root Reducer may combine multiple REDUCERS' output into a single TREE STATE
+  -Root Reducer structure is dependent upon programmer
+  -combineReducers() helps split the Root Reducer into separate functions, managing one branch of STATE tree
+  eg:
+  //Two REDUCERS, one for todos list and one for currently selected filter setting
+  function todos(state = [], action) {
+    ...calculate it
+    return nextState
+  }
+
+  function visibleTodoFilter(state = 'SHOW_ALL', action) {
+    //calculate it
+    return nextState
+  }
+
+  let todoApp = combineReducers({
+    todos,
+    visibleTodoFilter
+  })
