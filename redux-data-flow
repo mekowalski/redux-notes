@@ -1,0 +1,3 @@
+-Redux architecture revolves around a strict unidirectional data flow
+-All data in an application follows the same pattern, make the logic more predictable and easier to
+ understand
