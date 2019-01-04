@@ -1,3 +1,13 @@
 -Redux architecture revolves around a strict unidirectional data flow
 -All data in an application follows the same pattern, make the logic more predictable and easier to
  understand
+-Encourages data normalization to not end up with independent copies of the same data
+
+REDUX DATA LIFECYCLE
+1. You call store.dispatch()
+  -ACTION is plain object describing WHAT HAPPENED
+  -A brief snippet of news "Malind liked article 36"
+  eg:
+  { type: 'LIKE_ARTICLE', articleID: 36 }
+  { type: 'FETCH_USER_SUCCESS', response: {id: 3, name: 'Malind'} }
+  { type: 'ADD_TODO', text: 'Read the Redux docs' }
