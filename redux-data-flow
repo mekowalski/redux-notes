@@ -68,3 +68,8 @@ REDUX DATA LIFECYCLE
     todos: nextTodos,
     visitibleTodoFilter: nextVisibleTodoFilter
   }
+
+4. Redux STORE saves complete STATE tree returned by Root REDUCER
+  -New tree is now the next STATE of the application
+  -every listener registered with store.subscribe(listener) will be invoked
+  -UI may now be updated to reflect new STATE
